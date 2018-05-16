@@ -10,6 +10,18 @@
  * AudioController is responsible for controlling the SOMO-II mp3
  */
 class AudioController{
+
+private:
+	AudioController();
+
+    /**
+     * Plays an audio file from the SD card.
+     * Precondition: none
+	 * @param: char folder, char track
+	 * @return: void
+	 */
+	void playSound(char);
+	
 public:
 	/**
 	 * Play the start sound
@@ -28,7 +40,7 @@ public:
 	void playStopSound();
 	
 	/**
-	 * Play the stop reflect sound
+	 * Play the reflect sound
 	 * Precondition: none
      * @param: none
      * @return: void

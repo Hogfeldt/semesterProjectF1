@@ -6,13 +6,14 @@
 
 #ifndef CAR_H_
 #define CAR_H_
+
 /** 
  * Car is the central class, which purpose is to own the
  * classes representing the essential hardware for the 
  * car and define the control sequence in which their
  * features are called. 
  */
-class { 
+class Car{ 
 public:
 	/**
 	 * Starts the car by turning on the light, play a start sound

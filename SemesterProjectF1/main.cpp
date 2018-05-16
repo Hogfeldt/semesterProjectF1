@@ -7,12 +7,42 @@
 
 #include <avr/io.h>
 
+bool test();
+bool sensorTest();
+bool motorTest();
+bool lightTest();
+bool audioTest();
+bool carIntegration();
 
-int main(void)
-{
-    /* Replace with your application code */
-    while (1) 
-    {
-    }
+int main(void) {
+	test();
+    while (1) {} // Keep the MC running
 }
 
+bool test() {
+	sensorTest();
+	motorTest();
+	lightTest();
+	audioTest();
+	carIntegration();
+}
+
+bool sensorTest() {
+	return false;
+}
+
+bool motorTest() {
+	return false;
+}
+
+bool lightTest() {
+	return false;
+}
+
+bool audioTest() {
+	return false;
+}
+
+bool carIntegration() {
+	return false;
+}

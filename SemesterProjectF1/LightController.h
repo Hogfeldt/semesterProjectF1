@@ -43,5 +43,8 @@ public:
      * @return: void
      */	
 	void turnOffBreakLight();
+	
+private: 
+	void setupTimer(int);
 };
 #endif /* LIGHTCONTROLLER_H_ */

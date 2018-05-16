@@ -155,7 +155,28 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AudioController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Car.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="direction.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LightController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LightController.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Motor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sensor.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

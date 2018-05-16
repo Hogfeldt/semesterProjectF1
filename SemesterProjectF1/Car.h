@@ -12,10 +12,7 @@
  * car and define the control sequence in which their
  * features are called. 
  */
-class {
-	// position stores the position of the car, where the int represents the
-	// last reflect which is has past.
-	int position; 
+class { 
 public:
 	/**
 	 * Starts the car by turning on the light, play a start sound
@@ -42,7 +39,7 @@ public:
 			   drive past
      * @return: void
      */	
-	void driveForward(int numOfRef);
+	void driveForward(int);
 	
 	/**
 	 * Drives the car backward until the sensor has detected n
@@ -52,7 +49,7 @@ public:
 			   drive past
      * @return: void
      */	
-	void driveBackward(int numOfRef);
+	void driveBackward(int);
 	
 	/**
 	 * Stops the car from being in motion
@@ -61,5 +58,10 @@ public:
      * @return: void
      */	
 	void break();
+	
+private:
+	// position stores the position of the car, where the int represents the
+	// last reflect which is has past.
+	int position_;
 };
 #endif /* CAR_H_ */

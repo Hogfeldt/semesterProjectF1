@@ -2,7 +2,7 @@
  * SemesterProjectF1.cpp
  *
  * Created: 16/05/2018 08.00.00
- * Author : hogfe
+ * Author : Per Hogfeldt
  */ 
 
 #include <avr/io.h>

@@ -63,7 +63,7 @@ public:
      * @param: direction
      * @return: void
      */	
-	void setDriection(direction);
+	void setDriection(Direction);
 	
 	/**
 	 * Getter for the attribute direction_
@@ -71,7 +71,7 @@ public:
      * @param: none
      * @return: direction
      */	
-	direction getDirection();
+	Direction getDirection();
 	
 private:
 	direction direction_; // Motor direction

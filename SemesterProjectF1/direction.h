@@ -11,6 +11,6 @@
  * The direction enum defines directions in one dimensions 
  * as a forward direction and a backward direction
  */
-enum direction{forward, backward};
+enum Direction{forward, backward};
 
 #endif /* DIRECTION_H_ */

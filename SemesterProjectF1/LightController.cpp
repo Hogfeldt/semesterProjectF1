@@ -21,7 +21,17 @@ void LightController::setupTimer(int dutyCycle) {
 }
 
 void LightController::turnOnDrivingLight() {
-	setupTimer(17);
+		setupTimer(17);
+		DDRB = 255; // Make PortB to output
+		DDRE = 255; // Make Port to output
+		PORTB = 0; // set no signal out
+		//Setup for Timer 3: Non inverted and phase correct PVM mode
+		//					 10 bit and TOP = 1023 with no prescaler
+		TCCR3A = 0b10000011;
+		TCCR3B = 0b00000001;
+		
+		// Duty cycle = 17% => OCR1A = 173.91 (17% => 10 mA)
+		OCR3A = 1023; 
 }
 
 void LightController::turnOffDrivingLight() {
@@ -35,3 +45,16 @@ void LightController::turnOnBreakLight() {
 void LightController::turnOffBreakLight() {
 	setupTimer(17);
 }
+
+/**
+	setupTimer(17);
+	DDRB = 255; // Make PortB to output
+	PORTB = 0; // set no signal out
+	//Setup for Timer 3: Non inverted and phase correct PVM mode
+	//					 10 bit and TOP = 1023 with no prescaler
+	TCCR1A = 0b10000011;
+	TCCR1B = 0b00000001;
+	
+	// Duty cycle = 17% => OCR1A = 173.91 (17% => 10 mA)
+	OCR1A = 1023;
+**/

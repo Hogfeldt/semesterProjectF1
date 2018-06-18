@@ -2,7 +2,7 @@
  * globals.h
  *
  * Created: 18/06/2018 12.35.54
- *  Author: hogfe
+ *  Author: Per Hogfeldt
  */ 
 
 
@@ -10,9 +10,4 @@
 Car g_car;
 sensor g_sensor;
 #define GLOBALS_H_
-
-
-
-
-
 #endif /* GLOBALS_H_ */

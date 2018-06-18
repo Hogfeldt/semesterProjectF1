@@ -14,14 +14,37 @@ ISR(INT4_vect){
 	PORTB ^= (1<<7);
 	//g_sensor.notify();
 	// Notify car
-	//disable external interupt
-	//start timer interupt
-}
-;
-ISR(INT5_vect) {
-	PORTB ^= (1<<6);
+	//disable external interrupt
+	EIMSK = 0; // Disable Int4 and Int5;
+
+	//start timer interrupt
+	TCCR5A |= 0b00000000;
+	TCCR5B |= 0b00000101;
+	TCNT5 = 65535-15625;
+	TIMSK5 |= 1; // Enable overflow interrupt
 }
 
+ISR(INT5_vect) {
+	PORTB ^= (1<<6);
+	//g_sensor.notify();
+	// Notify car
+	//disable external interrupt
+	EIMSK = 0; // Disable Int4 and Int5;
+
+	//start timer interrupt
+	TCCR5A |= 0b00000000;
+	TCCR5B |= 0b00000101;
+	TCNT5 = 65535-15625;
+	TIMSK5 |= 1; // Enable overflow interrupt
+}
+
+ISR(TIMER5_OVF_vect) {
+	PORTB ^= (1<<5);
+	TIMSK5 = 0;
+	TCCR5B = 0;
+	EIFR = 0b00110000; // Clear interrupt flags
+	EIMSK |= 0b00110000; // Enable Int4 and Int5;
+}
  
  void sensor::enableSensor() {
 	DDRB = 0xFF;

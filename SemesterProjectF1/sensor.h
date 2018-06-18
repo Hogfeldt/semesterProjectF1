@@ -7,7 +7,12 @@
 #ifndef SENSOR_H_
 #define SENSOR_H_
  class sensor {
+
+ public:
+	enableSensor();	 
+	 
  private:
 	notify();
+ 
  };
 #endif /* SENSOR_H_*/

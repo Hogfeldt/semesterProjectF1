@@ -176,6 +176,9 @@
     <Compile Include="Motor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Sensor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="sensor.h">
       <SubType>compile</SubType>
     </Compile>

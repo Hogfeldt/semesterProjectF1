@@ -158,10 +158,16 @@
     <Compile Include="AudioController.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Car.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Car.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="direction.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="globals.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="LightController.cpp">

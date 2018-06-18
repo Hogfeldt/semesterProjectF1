@@ -16,6 +16,11 @@
 class Car{ 
 public:
 	/**
+	 * Constructor
+	 **/
+	//Car::Car();
+
+	/**
 	 * Starts the car by turning on the light, play a start sound
 	 * and set the car in motion
 	 * Precondition: The car is placed in the starting area.
@@ -58,7 +63,9 @@ public:
      * @param: none
      * @return: void
      */	
-	void break();
+	void breakDown();
+	
+	void notified();
 	
 private:
 	// position stores the position of the car, where the int represents the

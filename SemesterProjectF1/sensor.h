@@ -9,9 +9,7 @@
  class sensor {
 
  public:
-	void enableSensor();	 
-	 
- private:
+	void enableSensor();	
 	void notify();
  
  };

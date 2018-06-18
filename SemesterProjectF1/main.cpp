@@ -8,6 +8,7 @@
 #include <util/delay.h>
 #include "LightController.h"
 #include "sensor.h"
+#include "Car.h"
 
 // Function declarations
 bool test();

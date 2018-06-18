@@ -7,6 +7,7 @@
 #include <avr/io.h>		
 #include <util/delay.h>
 #include "LightController.h"
+#include "sensor.h"
 
 // Function declarations
 bool test();
@@ -24,14 +25,16 @@ int main(void) {
 bool test() {
 	sensorTest();
 	motorTest();
-	lightTest();
+	//lightTest();
 	audioTest();
 	carIntegration();
 	return false;
 }
 
 bool sensorTest() {
-	return false;
+	sensor sensor1;
+	sensor1.enableSensor();
+	return true;
 }
 
 bool motorTest() {

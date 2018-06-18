@@ -9,10 +9,10 @@
  class sensor {
 
  public:
-	enableSensor();	 
+	void enableSensor();	 
 	 
  private:
-	notify();
+	void notify();
  
  };
 #endif /* SENSOR_H_*/

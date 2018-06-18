@@ -7,6 +7,10 @@
 #ifndef CAR_H_
 #define CAR_H_
 
+#include "AudioController.h"
+#include "LightController.h"
+#include "Motor.h"
+
 /** 
  * Car is the central class, which purpose is to own the
  * classes representing the essential hardware for the 
@@ -18,7 +22,7 @@ public:
 	/**
 	 * Constructor
 	 **/
-	//Car::Car();
+	Car();
 
 	/**
 	 * Starts the car by turning on the light, play a start sound
@@ -71,5 +75,8 @@ private:
 	// position stores the position of the car, where the int represents the
 	// last reflect which is has past.
 	int position_;
+	AudioController audioController_;
+	LightController lightController_;
+	Motor motor_;
 };
 #endif /* CAR_H_ */

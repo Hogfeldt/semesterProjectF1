@@ -12,8 +12,6 @@
 class AudioController{
 
 private:
-	AudioController();
-
     /**
      * Plays an audio file from the SD card.
      * Precondition: none

@@ -74,7 +74,7 @@ public:
 	Direction getDirection();
 	
 private:
-	direction direction_; // Motor direction
+	Direction direction_; // Motor direction
 	int speed_; // Motor speed
 };
 #endif /* MOTOR_H_ */

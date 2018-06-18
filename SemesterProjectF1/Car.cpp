@@ -8,11 +8,17 @@
 #include "Car.h"
 #include "sensor.h"
 
-//Car::Car(){}
+Car::Car(){}
 
-void Car::start(){}
+
+void Car::start(){
+	position_ = 0;
+	audioController_.playStartSound();
+}
 	
-void Car::stop(){}
+void Car::stop(){
+	audioController_.playStopSound();
+}
 	
 void Car::driveForward(int position) {}
 	
@@ -20,4 +26,6 @@ void Car::driveBackward(int position) {}
 	
 void Car::breakDown() {}
 	
-void Car::notified() {}
+void Car::notified() {
+	audioController_.playReflectSound();
+}

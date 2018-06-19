@@ -19,10 +19,6 @@
  */
 class Car{ 
 public:
-	/**
-	 * Constructor
-	 */
-	Car();
 
 	/**
 	 * Starts the car by turning on the light, play a start sound
@@ -49,7 +45,7 @@ public:
 			   drive past
      * @return: void
      */	
-	void driveForward(int);
+	void driveForward();
 	
 	/**
 	 * Drives the car backward until the sensor has detected n
@@ -59,7 +55,7 @@ public:
 			   drive past
      * @return: void
      */	
-	void driveBackward(int);
+	void driveBackward();
 	
 	/**
 	 * Stops the car from being in motion
@@ -78,6 +74,8 @@ public:
 	 * @return: void	 
 	 */
 	void notified();
+	
+	int getPosition();
 	
 private:
 	// position stores the position of the car, where the int represents the

@@ -1,11 +1,12 @@
 #include <avr/io.h>
 #include <stdlib.h>
 #include <string.h>
+#include "AudioController.h"
 extern "C" {
 	#include "uart.h"
 };
 
-void initSound(){
+void AudioController::initSound(){
 	InitUART(9600, 8, 'N');
 	SendChar(0x7E);
 	SendChar(0x06);
@@ -17,7 +18,7 @@ void initSound(){
 	SendChar(0xEF);
 }
 
-void playSound(char track){
+void AudioController::playSound(char track){
 	char start = 0x7E;
 	char cmd = 0x0F; //command:"Play a specified folder & track"
 	char feedback = 1; //feedback
@@ -32,17 +33,17 @@ void playSound(char track){
 	SendString(comp);
 }
 
-void playStartSound(){
+void AudioController::playStartSound(){
 	playSound(1);
 	// plays the first audio file in folder 1 on the SD card
 }
 
-void playStopSound(){
+void AudioController::playStopSound(){
 	playSound(3);
 	// plays the third audio file in folder 1 on the SD card
 }
 
-void playReflectSound(){
+void AudioController::playReflectSound(){
 	playSound(2);
 	// plays the second audio file in folder 1 on the SD card
 }

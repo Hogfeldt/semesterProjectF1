@@ -35,6 +35,7 @@ void LightController::turnOnDrivingLight() {
 
 void LightController::turnOffDrivingLight() {
 	setupTimer(0);
+	OCR3A = 0; // turn of front light
 }
 
 void LightController::turnOnBreakLight() {

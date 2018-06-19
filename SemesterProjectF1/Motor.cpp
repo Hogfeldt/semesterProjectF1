@@ -4,8 +4,9 @@
  * Created: 19-06-2018 11:06:06
  *  Author: jonas
  */ 
-
+#define F_CPU 16000000UL
 #include <avr/io.h>
+#include <util/delay.h>
 #include "Motor.h"
 
 Motor::Motor(){
@@ -15,7 +16,7 @@ Motor::Motor(){
 		TCCR4B = 0;
 		OCR4A = 256;
 		speed_ = 0;
-		direction_= forward;
+		setDriection(forward);
 }
 
 void Motor::setSpeed(int speed){
@@ -43,7 +44,6 @@ Direction Motor::getDirection(){
 	return direction_;
 }
 
-
 void Motor::run(){
 	switch (speed_){
 	case 1:
@@ -61,5 +61,13 @@ void Motor::run(){
 	default:
 		OCR4A = 256;
 		break;
+	}
+}
+
+void Motor::breaks() {
+	for (int a = speed_-1; a >= 0; a--) {
+		setSpeed(a);
+		run();
+		_delay_ms(30.0);
 	}
 }

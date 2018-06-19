@@ -31,7 +31,12 @@ void Motor::stop(){
 }
 
 void Motor::setDriection(Direction direction){
-	direction_= direction;
+	direction_= direction; 
+	if(direction == forward) {
+		PORTA |= 1;
+	} else if (direction == backward) {
+		PORTA &= ~(1);
+	}
 }
 
 Direction Motor::getDirection(){

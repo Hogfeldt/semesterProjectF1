@@ -5,40 +5,41 @@
  *  Author: jonas
  */ 
 
+#include <avr/io.h>
 #include "Motor.h"
 
-Motor :: Motor(){
+Motor::Motor(){
 		DDRA |= (1<<0);
 		DDRH |= (1<<3);
 		TCCR4A = 0000001;
 		TCCR4B = 0;
 		OCR4A = 256;
 		speed_ = 0;
-		direction_= forward
+		direction_= forward;
 }
 
-Motor :: setSpeed(int speed){
+void Motor::setSpeed(int speed){
 	speed_=speed;
 }
 
-Motor :: getSpeed(){
-	return speed_
+int Motor::getSpeed(){
+	return speed_;
 }
 
-Motor :: stop(){
+void Motor::stop(){
 	setSpeed(0);
 }
 
-Motor :: setDriection(Direction){
-	direction_=Direction;
+void Motor::setDriection(Direction direction){
+	direction_= direction;
 }
 
-Motor :: getDirection(){
+Direction Motor::getDirection(){
 	return direction_;
 }
 
 
-Motor :: run(){
+void Motor::run(){
 	switch (speed_){
 	case 1:
 		OCR4A = 153;
@@ -57,6 +58,3 @@ Motor :: run(){
 		break;
 	}
 }
-
-
-

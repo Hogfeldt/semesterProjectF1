@@ -9,8 +9,22 @@
  class sensor {
 
  public:
-	void enableSensor();	
+	/**
+	 * Initialize the sensors
+	 * Precondition: none
+	 * @param: none
+	 * @return: void
+	 */
+	void enableSensor();
+	
+	/**
+	 * When an interrupt from the sensors, either INT4 or INT3, the
+	 * Sensor class notifies the Car class, that a reflector has been
+	 * sensed.
+	 * Precondition: enableSensor() has been called
+	 * @param: none
+	 * @return: none
+	 */	
 	void notify();
- 
  };
 #endif /* SENSOR_H_*/

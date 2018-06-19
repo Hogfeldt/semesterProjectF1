@@ -12,11 +12,8 @@
  
 ISR(INT4_vect){
 	PORTB ^= (1<<7);
-	//g_sensor.notify();
-	// Notify car
-	//disable external interrupt
+	g_sensor.notify(); // notify car
 	EIMSK = 0; // Disable Int4 and Int5;
-
 	//start timer interrupt
 	TCCR5A |= 0b00000000;
 	TCCR5B |= 0b00000101;
@@ -26,11 +23,8 @@ ISR(INT4_vect){
 
 ISR(INT5_vect) {
 	PORTB ^= (1<<6);
-	//g_sensor.notify();
-	// Notify car
-	//disable external interrupt
+	g_sensor.notify(); // Notify car
 	EIMSK = 0; // Disable Int4 and Int5;
-
 	//start timer interrupt
 	TCCR5A |= 0b00000000;
 	TCCR5B |= 0b00000101;

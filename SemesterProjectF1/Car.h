@@ -69,12 +69,21 @@ public:
      */	
 	void breakDown();
 	
+	/**
+	 * When a reflector has been passed by the car, the sensor will
+	 * call this method to notify the Car. The Car will then increment
+	 * its position and do whatever else is needed.
+	 * Precondition: None
+	 * @param: none
+	 * @return: void	 
+	 */
 	void notified();
 	
 private:
 	// position stores the position of the car, where the int represents the
-	// last reflect which is has past.
+	// number of reflectors which the car has passed.
 	int position_;
+	// Carparts:
 	AudioController audioController_;
 	LightController lightController_;
 	Motor motor_;

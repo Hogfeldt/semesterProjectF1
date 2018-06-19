@@ -1,6 +1,5 @@
 /*
- * Car.cpp
- *
+ * File: Car.cpp
  * Created: 18/06/2018 11.28.49
  *  Author: Per Hogfeldt	
  */ 
@@ -27,6 +26,6 @@ void Car::driveBackward(int position) {}
 void Car::breakDown() {}
 	
 void Car::notified() {
-	audioController_.playReflectSound();
+	//audioController_.playReflectSound();
 	position_++;
 }

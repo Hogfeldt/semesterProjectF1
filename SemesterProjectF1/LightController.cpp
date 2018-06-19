@@ -1,7 +1,7 @@
 /*
  * File: LightController.cpp
  * Created: 16/05/2018 13.21.24
- * Author: Per Hogfeldt
+ * Author: Per Hogfeldt and Ebbe Helverskov
  */ 
 #include <avr/io.h>
 #include "LightController.h"

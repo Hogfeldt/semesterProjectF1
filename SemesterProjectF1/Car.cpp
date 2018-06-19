@@ -4,6 +4,8 @@
  *  Author: Per Hogfeldt	
  */ 
 
+#define F_CPU 16000000UL
+#include <util/delay.h>
 #include "Car.h"
 #include "sensor.h"
 #include "Motor.h"
@@ -15,7 +17,7 @@ void Car::start(){
 	position_ = 0;
 	audioController_.playStartSound();
 	g_sensor.enableSensor();
-	motor_.setSpeed(1);
+	motor_.setSpeed(4);
 	motor_.run();
 	lightController_.turnOnDrivingLight();
 }
@@ -23,8 +25,9 @@ void Car::start(){
 void Car::stop(){
 	motor_.breaks();
 	motor_.stop();
-	lightController_.turnOffDrivingLight();
 	audioController_.playStopSound();
+	_delay_ms(500);
+	lightController_.turnOffDrivingLight();
 }
 	
 void Car::driveForward() {

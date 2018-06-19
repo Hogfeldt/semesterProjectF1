@@ -22,8 +22,6 @@ public:
 	**/
 	Motor();
 	
-	
-	
 	/**
 	 * Turn on the motor with the speed defined in attribute speed_
 	 * Precondition: none
@@ -31,9 +29,7 @@ public:
      * @return: void
      */	
 	void run();
-	
-	
-	
+	  
 	/**
 	 * Turn off the motor
 	 * Precondition: none

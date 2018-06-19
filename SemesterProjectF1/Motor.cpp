@@ -10,10 +10,10 @@
 #include "Motor.h"
 
 Motor::Motor(){
-		DDRA |= (1<<0);
-		DDRH |= (1<<3);
-		TCCR4A = 0000001;
-		TCCR4B = 0;
+		DDRA = 255;
+		DDRH |= 255; // PORTH is now output
+		TCCR4A = 0b11000001; // PVM 8-bit phase correct
+		TCCR4B = 1;
 		OCR4A = 256;
 		speed_ = 0;
 		setDriection(forward);
@@ -34,10 +34,11 @@ void Motor::stop(){
 void Motor::setDriection(Direction direction){
 	direction_= direction; 
 	if(direction == forward) {
-		PORTA |= 1;
+		PORTA &= ~(1);	
 	} else if (direction == backward) {
-		PORTA &= ~(1);
+		PORTA |= 1;
 	}
+	
 }
 
 Direction Motor::getDirection(){
@@ -68,6 +69,6 @@ void Motor::breaks() {
 	for (int a = speed_-1; a >= 0; a--) {
 		setSpeed(a);
 		run();
-		_delay_ms(30.0);
+		_delay_ms(10.0);
 	}
 }

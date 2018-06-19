@@ -26,7 +26,7 @@ Car g_car;
 sensor g_sensor;
 
 int main(void) {
-	test();
+	sensorTest();
     while (1) {} // Keep the MC running
 }
 
@@ -64,12 +64,12 @@ bool motorTest() {
 	testMotor.run();
 	_delay_ms(3000);
 	testMotor.breaks();
-	_delay_ms(500);
+	//_delay_ms(1000);
 	testMotor.setDriection(backward);
-	_delay_ms(500);
+	_delay_ms(4000);
 	testMotor.setSpeed(3);
 	testMotor.run();
-	_delay_ms(3000);
+	_delay_ms(4000);
 	testMotor.stop();
 	return false;
 }

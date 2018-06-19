@@ -10,6 +10,8 @@
 #include "sensor.h"
 #include "Car.h"
 #include "globals.h"
+#include "Motor.h"
+#include "AudioController.h"
 
 // Function declarations
 bool test();
@@ -29,7 +31,7 @@ int main(void) {
 }
 
 void driveAlgorithm() {
-	/*g_car.start();
+	g_car.start();
 	while(g_car.getPosition()<7){}
 	g_car.breakDown();
 	g_car.driveBackward();
@@ -38,13 +40,13 @@ void driveAlgorithm() {
 	g_car.driveForward();
 	while (g_car.getPosition()<11){}
 	g_car.breakDown();
-	g_car.stop();*/
+	g_car.stop();
 }
 
 bool test() {
 	sensorTest();
 	motorTest();
-	//lightTest();
+	lightTest();
 	audioTest();
 	carIntegration();
 	return false;
@@ -57,6 +59,18 @@ bool sensorTest() {
 }
 
 bool motorTest() {
+	Motor testMotor;
+	testMotor.setSpeed(4);
+	testMotor.run();
+	_delay_ms(3000);
+	testMotor.breaks();
+	_delay_ms(500);
+	testMotor.setDriection(backward);
+	_delay_ms(500);
+	testMotor.setSpeed(3);
+	testMotor.run();
+	_delay_ms(3000);
+	testMotor.stop();
 	return false;
 }
 
@@ -73,7 +87,15 @@ bool lightTest() {
 }
 
 bool audioTest() {
-	return false;
+	AudioController testAudio;
+	testAudio.initSound();
+	testAudio.playReflectSound();
+	_delay_ms(2000);
+	testAudio.playStartSound();
+	_delay_ms(2000);
+	testAudio.playStopSound();
+	_delay_ms(2000);
+	return true;
 }
 
 bool carIntegration() {

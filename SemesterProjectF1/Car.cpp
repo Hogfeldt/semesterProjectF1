@@ -9,6 +9,7 @@
 #include "Motor.h"
 #include "AudioController.h"
 #include "globals.h"
+#include "LightController.h"
 
 void Car::start(){
 	position_ = 0;
@@ -16,22 +17,32 @@ void Car::start(){
 	g_sensor.enableSensor();
 	motor_.setSpeed(1);
 	motor_.run();
+	lightController_.turnOnDrivingLight();
 }
 	
 void Car::stop(){
 	motor_.breaks();
 	motor_.stop();
+	lightController_.turnOffDrivingLight();
 	audioController_.playStopSound();
 }
 	
-void Car::driveForward() {}
+void Car::driveForward() {
+	motor_.setDriection(forward);
+}
 	
-void Car::driveBackward() {}
+void Car::driveBackward() {
+	motor_.setDriection(backward);
+}
 	
-void Car::breakDown() {}
+void Car::breakDown() {
+	lightController_.turnOnBreakLight();
+	motor_.breaks();
+	lightController_.turnOffBreakLight();
+}
 	
 void Car::notified() {
-	//audioController_.playReflectSound();
+	audioController_.playReflectSound();
 	position_++;
 }
 

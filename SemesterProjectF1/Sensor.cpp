@@ -1,7 +1,7 @@
 /*
  * File: Sensor.cpp
  * Created: 30/05/2018 13.55.48
- * Author: Per Hogfeldt
+ * Author: Per Hogfeldt and Ebbe Helverskov
  */ 
 
  #include <avr/io.h>

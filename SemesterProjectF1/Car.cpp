@@ -28,4 +28,5 @@ void Car::breakDown() {}
 	
 void Car::notified() {
 	audioController_.playReflectSound();
+	position_++;
 }

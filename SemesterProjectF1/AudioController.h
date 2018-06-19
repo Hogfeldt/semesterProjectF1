@@ -21,6 +21,8 @@ private:
 	void playSound(char);
 	
 public:
+
+	void initSound();
 	/**
 	 * Play the start sound
 	 * Precondition: none

@@ -29,8 +29,8 @@ void LightController::turnOnDrivingLight() {
 		TCCR3A = 0b10000011;
 		TCCR3B = 0b00000001;
 		
-		// Duty cycle = 17% => OCR1A = 173.91 (17% => 10 mA)
-		OCR3A = 1023; 
+				
+		OCR3A = 1023; // 90% duty cycle til forlyset.
 }
 
 void LightController::turnOffDrivingLight() {

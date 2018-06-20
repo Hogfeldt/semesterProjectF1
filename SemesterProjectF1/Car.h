@@ -20,10 +20,16 @@
 class Car{ 
 public:
 
+	/**
+	 * Sets the driving speed and activate the motor
+	 * Precondition: The car has been started
+     * @param: Integer from 0-4, where 0 is the lowest speed and 4 is the highest
+     * @return: void
+     */	
 	void drive(int);
 
 	/**
-	 * Starts the car by turning on the light, play a start sound
+	 * Starts the car by initiating car parts, turning on the light, play a start sound
 	 * and set the car in motion
 	 * Precondition: The car is placed in the starting area.
      * @param: none
@@ -32,7 +38,8 @@ public:
 	void start();
 	
 	/**
-	 * Turns of the car by turning of the light and play a stop sound
+	 * Activate the breaks, so that the car stops being in motion, turn of the car by turning 
+	 * of the light and play a stop sound
 	 * Precondition: The car is turned on
      * @param: none
      * @return: void
@@ -40,43 +47,45 @@ public:
 	void stop();
 	
 	/**
-	 * Drives the car forward until the sensor has detected n
-	 * number of reflects
+	 * Change motor direction to forward
 	 * Precondition: The car is turned on
-     * @param: Takes a number of reflects which the car should 
-			   drive past
+     * @param: none
      * @return: void
      */	
 	void driveForward();
 	
 	/**
-	 * Drives the car backward until the sensor has detected n
-	 * number of reflects
+	 * Change motor direction to backward
 	 * Precondition: The car is turned on
-     * @param: Takes a number of reflects which the car should 
-			   drive past
+     * @param: none
      * @return: void
      */	
 	void driveBackward();
 	
 	/**
-	 * Stops the car from being in motion
+	 * Stops the car from being in motion and activate break lights
 	 * Precondition: The car is in motion
      * @param: none
      * @return: void
      */	
-	void breakDown();
+	void activateBreak();
 	
 	/**
 	 * When a reflector has been passed by the car, the sensor will
 	 * call this method to notify the Car. The Car will then increment
 	 * its position and do whatever else is needed.
-	 * Precondition: None
+	 * Precondition: sensor is enabled
 	 * @param: none
 	 * @return: void	 
 	 */
 	void notified();
 	
+	/**
+	 * Getter method for the reflector counter
+	 * Precondition: The car has been started
+	 * @param: none
+	 * @return: An integer which is the number of reflectors which the car has passed
+	 */	
 	int getPosition();
 	
 private:

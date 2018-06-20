@@ -40,7 +40,7 @@ void Car::driveBackward() {
 	motor_.setDriection(backward);
 }
 	
-void Car::breakDown() {
+void Car::activateBreak() {
 	lightController_.turnOnBreakLight();
 	motor_.breaks();
 	lightController_.turnOffBreakLight();

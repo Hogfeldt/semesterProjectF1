@@ -54,9 +54,9 @@ void modulTest::audioTest() {
 	AudioController testAudio;
 	testAudio.initSound();
 	testAudio.playReflectSound();
-	//_delay_ms(5000);
-	//testAudio.playStartSound();
-	//_delay_ms(5000);
-	//testAudio.playStopSound();
-	//_delay_ms(5000);
+	_delay_ms(5000);
+	testAudio.playStartSound();
+	_delay_ms(5000);
+	testAudio.playStopSound();
+	_delay_ms(5000);
 }

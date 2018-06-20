@@ -1,4 +1,6 @@
+#define F_CPU 16000000UL
 #include <avr/io.h>
+#include <util/delay.h>
 #include <stdlib.h>
 #include <string.h>
 #include "AudioController.h"
@@ -8,6 +10,7 @@ extern "C" {
 
 void AudioController::initSound() {
 		InitUART(9600, 8, 'N');
+		_delay_ms(100);
 		SendChar(0x7E);
 		SendChar(0x06);
 		SendChar(0x00);
@@ -16,6 +19,7 @@ void AudioController::initSound() {
 		SendChar(0xFF);
 		SendChar(0xDC);
 		SendChar(0xEF);
+		_delay_ms(100);
 }
 
 void AudioController::playSound(char track){

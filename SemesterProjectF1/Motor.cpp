@@ -60,7 +60,7 @@ void Motor::run(){
 		OCR4A = 0;
 		break;
 	default:
-		OCR4A = 256;
+		OCR4A = 255; 
 		break;
 	}
 }

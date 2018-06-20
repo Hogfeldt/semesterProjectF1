@@ -53,7 +53,7 @@ void Motor::run(){
 	case 2:
 		OCR4A = 102;
 		break;
-	case 3:
+	case 3: 
 		OCR4A = 51;
 		break;
 	case 4:
@@ -66,9 +66,9 @@ void Motor::run(){
 }
 
 void Motor::breaks() {
-	for (int a = speed_-1; a >= 0; a--) {
+	for (int a = speed_-1; a >= 1; a--) {
 		setSpeed(a);
 		run();
-		_delay_ms(10.0);
+		_delay_ms(500.0);
 	}
 }

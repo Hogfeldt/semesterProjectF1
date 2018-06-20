@@ -5,6 +5,7 @@
  */ 
 
 #define F_CPU 16000000UL
+#include <avr/io.h>
 #include <util/delay.h>
 #include "Car.h"
 #include "sensor.h"
@@ -15,7 +16,8 @@
 
 void Car::start(){
 	position_ = 0;
-	audioController_.playStartSound();
+	//audioController_.initSound();
+	//audioController_.playStartSound();
 	g_sensor.enableSensor();
 	motor_.setSpeed(4);
 	motor_.run();
@@ -25,7 +27,7 @@ void Car::start(){
 void Car::stop(){
 	motor_.breaks();
 	motor_.stop();
-	audioController_.playStopSound();
+	//audioController_.playStopSound();
 	_delay_ms(500);
 	lightController_.turnOffDrivingLight();
 }
@@ -43,9 +45,14 @@ void Car::breakDown() {
 	motor_.breaks();
 	lightController_.turnOffBreakLight();
 }
+
+void Car::drive(int speed) {
+	motor_.setSpeed(speed);
+	motor_.run();
+}
 	
 void Car::notified() {
-	audioController_.playReflectSound();
+	//audioController_.playReflectSound();
 	position_++;
 }
 

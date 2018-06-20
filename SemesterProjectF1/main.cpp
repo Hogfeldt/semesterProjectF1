@@ -26,19 +26,21 @@ Car g_car;
 sensor g_sensor;
 
 int main(void) {
-	sensorTest();
+	driveAlgorithm();
     while (1) {} // Keep the MC running
 }
 
 void driveAlgorithm() {
 	g_car.start();
-	while(g_car.getPosition()<7){}
+	while(g_car.getPosition()<5){}
 	g_car.breakDown();
 	g_car.driveBackward();
-	while(g_car.getPosition()<9){}
+	g_car.drive(4);
+	while(g_car.getPosition()<8){}
 	g_car.breakDown();
 	g_car.driveForward();
-	while (g_car.getPosition()<11){}
+	g_car.drive(4);
+	while (g_car.getPosition()<10){}
 	g_car.breakDown();
 	g_car.stop();
 }
@@ -53,8 +55,7 @@ bool test() {
 }
 
 bool sensorTest() {
-	sensor sensor1;
-	sensor1.enableSensor();
+	g_sensor.enableSensor();
 	return true;
 }
 
@@ -67,7 +68,7 @@ bool motorTest() {
 	//_delay_ms(1000);
 	testMotor.setDriection(backward);
 	_delay_ms(4000);
-	testMotor.setSpeed(3);
+	testMotor.setSpeed(2);
 	testMotor.run();
 	_delay_ms(4000);
 	testMotor.stop();

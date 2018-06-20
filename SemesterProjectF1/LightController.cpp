@@ -22,7 +22,7 @@ void LightController::setupTimer(int dutyCycle) {
 
 void LightController::turnOnDrivingLight() {
 		setupTimer(17);
-		DDRE = 255; // Make PortE to output
+		DDRE |= (1<<3); // Make PortE bit 3  to output
 		PORTB = 0; // set no signal out
 		//Setup for Timer 3: Non inverted and phase correct PVM mode
 		//					 10 bit and TOP = 1023 with no prescaler

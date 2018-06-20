@@ -33,7 +33,7 @@ ISR(INT5_vect) {
 }
 
 ISR(TIMER5_OVF_vect) {
-	PORTB ^= (1<<5);
+	//PORTB ^= (1<<5);
 	TIMSK5 = 0;
 	TCCR5B = 0;
 	EIFR = 0b00110000; // Clear interrupt flags

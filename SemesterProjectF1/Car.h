@@ -20,6 +20,8 @@
 class Car{ 
 public:
 
+	void drive(int);
+
 	/**
 	 * Starts the car by turning on the light, play a start sound
 	 * and set the car in motion

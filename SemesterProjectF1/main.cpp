@@ -12,21 +12,17 @@
 #include "globals.h"
 #include "Motor.h"
 #include "AudioController.h"
+#include "modulTest.h"
 
 // Function declarations
-bool test();
-bool sensorTest();
-bool motorTest();
-bool lightTest();
-bool audioTest();
-bool carIntegration();
 void driveAlgorithm();
 
 Car g_car;
 sensor g_sensor;
+modulTest modulTest;
 
 int main(void) {
-	driveAlgorithm();
+	modulTest.audioTest();
     while (1) {} // Keep the MC running
 }
 
@@ -43,61 +39,4 @@ void driveAlgorithm() {
 	while (g_car.getPosition()<10){}
 	g_car.activateBreak();
 	g_car.stop();
-}
-
-bool test() {
-	sensorTest();
-	motorTest();
-	lightTest();
-	audioTest();
-	carIntegration();
-	return false;
-}
-
-bool sensorTest() {
-	g_sensor.enableSensor();
-	return true;
-}
-
-bool motorTest() {
-	Motor testMotor;
-	testMotor.setSpeed(4);
-	testMotor.run();
-	_delay_ms(3000);
-	testMotor.breaks();
-	//_delay_ms(1000);
-	testMotor.setDriection(backward);
-	_delay_ms(4000);
-	testMotor.setSpeed(2);
-	testMotor.run();
-	_delay_ms(4000);
-	testMotor.stop();
-	return false;
-}
-
-bool lightTest() {
-	LightController light;
-	light.turnOnDrivingLight();
-	_delay_ms(5000.0);
-	light.turnOnBreakLight();
-	_delay_ms(5000.0);
-	light.turnOffBreakLight();
-	_delay_ms(5000.0);
-	light.turnOffDrivingLight();
-	return false;
-}
-
-bool audioTest() {
-	AudioController testAudio;
-	testAudio.playReflectSound();
-	_delay_ms(2000);
-	testAudio.playStartSound();
-	_delay_ms(2000);
-	testAudio.playStopSound();
-	_delay_ms(2000);
-	return true;
-}
-
-bool carIntegration() {
-	return false;
 }

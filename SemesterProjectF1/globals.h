@@ -6,6 +6,9 @@
 
 #ifndef GLOBALS_H_
 
+#include "Car.h"
+#include "sensor.h"
+
 extern Car g_car;
 extern sensor g_sensor;
 

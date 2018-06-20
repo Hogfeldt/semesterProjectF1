@@ -10,8 +10,8 @@
 #include "Motor.h"
 
 Motor::Motor(){
-		DDRA = 255; // PORTA is now output.
-		DDRH |= 255; // PORTH is now output
+		DDRA = 255; // PORTA is now output for the H-bidge (to change direction).
+		DDRH |= 255; // PORTH is now output for PWM.
 		TCCR4A = 0b11000001; // PVM 8-bit phase correct. TOP = 255.
 		TCCR4B = 1; // no prescaler.
 		OCR4A = 255; // 0% duty cycle. 

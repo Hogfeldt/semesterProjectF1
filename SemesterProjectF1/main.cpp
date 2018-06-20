@@ -89,7 +89,6 @@ bool lightTest() {
 
 bool audioTest() {
 	AudioController testAudio;
-	testAudio.initSound();
 	testAudio.playReflectSound();
 	_delay_ms(2000);
 	testAudio.playStartSound();

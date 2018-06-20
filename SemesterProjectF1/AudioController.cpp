@@ -6,16 +6,16 @@ extern "C" {
 	#include "uart.h"
 };
 
-void AudioController::initSound(){
-	InitUART(9600, 8, 'N');
-	SendChar(0x7E);
-	SendChar(0x06);
-	SendChar(0x00);
-	SendChar(0x00);
-	SendChar(0x1E);
-	SendChar(0xFF);
-	SendChar(0xDC);
-	SendChar(0xEF);
+void AudioController::initSound() {
+		InitUART(9600, 8, 'N');
+		SendChar(0x7E);
+		SendChar(0x06);
+		SendChar(0x00);
+		SendChar(0x00);
+		SendChar(0x1E);
+		SendChar(0xFF);
+		SendChar(0xDC);
+		SendChar(0xEF);
 }
 
 void AudioController::playSound(char track){

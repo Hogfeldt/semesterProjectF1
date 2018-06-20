@@ -18,7 +18,7 @@
 	void enableSensor();
 	
 	/**
-	 * When an interrupt from the sensors, either INT4 or INT3, the
+	 * When an interrupt from the sensors, either INT4 or INT3, occurs, the
 	 * Sensor class notifies the Car class, that a reflector has been
 	 * sensed.
 	 * Precondition: enableSensor() has been called

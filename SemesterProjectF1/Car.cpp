@@ -16,7 +16,6 @@
 
 void Car::start(){
 	position_ = 0;
-	//audioController_.initSound();
 	//audioController_.playStartSound();
 	g_sensor.enableSensor();
 	motor_.setSpeed(4);

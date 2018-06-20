@@ -22,7 +22,7 @@ sensor g_sensor;
 modulTest modulTest;
 
 int main(void) {
-	modulTest.audioTest();
+	driveAlgorithm();
     while (1) {} // Keep the MC running
 }
 

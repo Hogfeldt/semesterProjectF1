@@ -10,13 +10,13 @@
 #include "Motor.h"
 
 Motor::Motor(){
-		DDRA = 255;
+		DDRA = 255; // PORTA is now output.
 		DDRH |= 255; // PORTH is now output
-		TCCR4A = 0b11000001; // PVM 8-bit phase correct
-		TCCR4B = 1;
-		OCR4A = 256;
-		speed_ = 0;
-		setDriection(forward);
+		TCCR4A = 0b11000001; // PVM 8-bit phase correct. TOP = 255.
+		TCCR4B = 1; // no prescaler.
+		OCR4A = 255; // 0% duty cycle. 
+		speed_ = 0;// no speed.
+		setDriection(forward); // Direction set.
 }
 
 void Motor::setSpeed(int speed){
@@ -34,9 +34,9 @@ void Motor::stop(){
 void Motor::setDriection(Direction direction){
 	direction_= direction; 
 	if(direction == forward) {
-		PORTA &= ~(1);	
+		PORTA &= ~(1);	// PORTA bit 0 = 0: forward. Controle the H-bridge.
 	} else if (direction == backward) {
-		PORTA |= 1;
+		PORTA |= 1; // PORT A bit 0 = 1: Backward. Controle the H-bridge.
 	}
 	
 }

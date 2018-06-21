@@ -6,6 +6,7 @@
 #define F_CPU 16000000UL
 #include <avr/io.h>		
 #include <util/delay.h>
+#include <avr/interrupt.h>
 #include "LightController.h"
 #include "sensor.h"
 #include "Car.h"
@@ -28,15 +29,18 @@ int main(void) {
 
 void driveAlgorithm() {
 	g_car.start();
-	while(g_car.getPosition()<5){}
+	while(g_car.getPosition()<6){}
 	g_car.activateBreak();
 	g_car.driveBackward();
 	g_car.drive(4);
-	while(g_car.getPosition()<8){}
+	//cli();
+	//_delay_ms(2000);
+	//sei();
+	while(g_car.getPosition()<11){}
 	g_car.activateBreak();
 	g_car.driveForward();
 	g_car.drive(4);
-	while (g_car.getPosition()<10){}
+	while (g_car.getPosition()<13){}
 	g_car.activateBreak();
 	g_car.stop();
 }

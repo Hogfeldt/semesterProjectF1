@@ -7,6 +7,7 @@
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 #include "Car.h"
 #include "sensor.h"
 #include "Motor.h"
@@ -16,8 +17,10 @@
 
 void Car::start(){
 	position_ = 0;
+	audioController_.initSound();
 	audioController_.playStartSound();
 	g_sensor.enableSensor();
+	_delay_ms(2000);
 	motor_.setSpeed(4);
 	motor_.run();
 	lightController_.turnOnDrivingLight();

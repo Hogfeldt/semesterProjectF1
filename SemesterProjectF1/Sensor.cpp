@@ -17,8 +17,9 @@ ISR(INT4_vect){
 	//start timer interrupt
 	TCCR5A |= 0b00000000;
 	TCCR5B |= 0b00000101;
-	TCNT5 = 65535-7811;
+	TCNT5 = 65535-3905;
 	TIMSK5 |= 1; // Enable overflow interrupt
+	//PORTB |= (5<<1);
 }
 
 ISR(INT5_vect) {
@@ -28,8 +29,9 @@ ISR(INT5_vect) {
 	//start timer interrupt
 	TCCR5A |= 0b00000000;
 	TCCR5B |= 0b00000101;
-	TCNT5 = 65535-7811;
+	TCNT5 = 65535-3905;
 	TIMSK5 |= 1; // Enable overflow interrupt
+	//PORTB |= (5<<1);
 }
 
 ISR(TIMER5_OVF_vect) {

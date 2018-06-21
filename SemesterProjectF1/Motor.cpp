@@ -33,19 +33,11 @@ void Motor::stop(){
 
 void Motor::setDriection(Direction direction){
 	direction_= direction; 
-	/*if(direction == forward) {
+	if(direction == forward) {
 		PORTA &= ~(1);	// PORTA bit 0 = 0: forward. Controle the H-bridge.
 	} else if (direction == backward) {
 		PORTA |= 1; // PORT A bit 0 = 1: Backward. Controle the H-bridge.
-	}*/
-	
-		if(direction == backward) {
-			PORTA &= ~(1);	// PORTA bit 0 = 0: forward. Controle the H-bridge.
-			} else if (direction == forward) {
-			PORTA |= 1; // PORT A bit 0 = 1: Backward. Controle the H-bridge.
-		}
-		
-	
+	}
 }
 
 Direction Motor::getDirection(){

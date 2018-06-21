@@ -29,7 +29,6 @@ void LightController::turnOnDrivingLight() {
 		TCCR3A = 0b10000011;
 		TCCR3B = 0b00000001;
 		
-				
 		OCR3A = 1023; // 90% duty cycle til forlyset.
 }
 

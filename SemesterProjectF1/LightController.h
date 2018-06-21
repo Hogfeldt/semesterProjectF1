@@ -45,6 +45,12 @@ public:
 	void turnOffBreakLight();
 	
 private: 
+	/**
+	 * This method will change the duty cycle on the back light
+	 * Precondition: Driving light is on
+     * @param: Integer from 0 to 100, representing duty cycle
+     * @return: void
+     */		
 	void setupTimer(int);
 };
 #endif /* LIGHTCONTROLLER_H_ */

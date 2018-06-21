@@ -33,14 +33,11 @@ void driveAlgorithm() {
 	g_car.activateBreak();
 	g_car.driveBackward();
 	g_car.drive(4);
-	//cli();
-	//_delay_ms(2000);
-	//sei();
-	while(g_car.getPosition()<11){}
+	while(g_car.getPosition()<8){}
 	g_car.activateBreak();
 	g_car.driveForward();
 	g_car.drive(4);
-	while (g_car.getPosition()<13){}
+	while (g_car.getPosition()<11){}
 	g_car.activateBreak();
 	g_car.stop();
 }
